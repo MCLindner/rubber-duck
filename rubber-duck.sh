@@ -4,10 +4,13 @@
 # This script configures Claude to act as a debugging assistant that provides
 # only prose guidance without generating any code
 
+# Get the directory where the actual script is located
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
+
 # Configuration
 CLAUDE_API_URL="https://api.anthropic.com/v1/messages"
-API_KEY_FILE="./.claude_api_key"  # Store your API key in this file
-HISTORY_FILE="./.claude_debug_history"  # Store conversation history
+API_KEY_FILE="$SCRIPT_DIR/.claude_api_key"
+HISTORY_FILE="$SCRIPT_DIR/.claude_debug_history"
 MODEL="claude-sonnet-4-20250514"
 
 # Color codes for output formatting
