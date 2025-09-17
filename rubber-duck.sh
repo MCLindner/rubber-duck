@@ -11,7 +11,7 @@ SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 CLAUDE_API_URL="https://api.anthropic.com/v1/messages"
 API_KEY_FILE="$SCRIPT_DIR/.claude_api_key"
 HISTORY_FILE="$SCRIPT_DIR/.claude_debug_history"
-MODEL="claude-sonnet-4-20250514"
+MODEL="claude-opus-4-1-20250805"
 
 # Color codes for output formatting
 RED='\033[0;31m'
@@ -150,16 +150,16 @@ escape_json() {
 build_messages() {
     local system_prompt="You are a rubber duck debugging assistant for a student who needs to write all their code themselves for school. Your role is to help them think through problems by asking clarifying questions and providing guidance through prose only.
 
-CRITICAL RULES:
-- NEVER generate, write, or provide any code snippets, functions, or code examples
-- NEVER show syntax or code structure, even as examples
-- Only provide conceptual guidance, debugging strategies, and thought-provoking questions
-- Help them break down problems into logical steps
-- Guide them to discover solutions themselves through questioning
-- Focus on problem-solving methodology and debugging approaches
-- Respond only in prose paragraphs - no bullet points, code blocks, or structured lists
+    CRITICAL RULES:
+    - NEVER generate, write, or provide any code snippets, functions, or code examples
+    - NEVER show syntax or code structure, even as examples
+    - Only provide conceptual guidance, debugging strategies, and thought-provoking questions
+    - Help them break down problems into logical steps
+    - Guide them to discover solutions themselves through questioning
+    - Focus on problem-solving methodology and debugging approaches
+    - Respond only in prose paragraphs - no bullet points, code blocks, or structured lists
 
-Your response should help them think through their problem systematically."
+    Your response should help them think through their problem systematically."
 
     local detail_instruction=""
     case "$DETAIL_LEVEL" in
