@@ -4,8 +4,8 @@
 - Add the script to your /bin/ folder if you'd like!
 
 # Usage
-This script acts as a rubber duck debugging assistant that provides"
-guidance through prose only - no code will be generated."
+This script acts as a rubber duck debugging assistant that provides
+guidance through prose only - no code will be generated.
 
 ## Options:
   -d, --detail LEVEL      Detail level (quick|thorough|deep)
